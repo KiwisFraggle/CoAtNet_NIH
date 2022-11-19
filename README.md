@@ -1,4 +1,11 @@
-#CoAtNet Training NIH
+# Project title: Multi-disease diagnosis of chest X-ray in real-world data
+
+# Abstract:
+The COVID-19 pandemic has led to massive demands for Chest X-ray diagnosis, dramatically overloading frontier radiologists and promoting the development of artificial intelligence (AI)-based diagnostic models to address this situation. However, the current AI models were still insufficient in multi-disease diagnosis for the real-world data, which showed a long-tail distribution. To tackle this issue, a long-tail public dataset, “ChestX-ray14”, which involved fourteen (14) disease labels, was randomly divided into train, val, and test sets with ratios of 0.7, 0.1, and 0.2. Two pretrained state-of-the-art networks, EfficientNet-b5 and CoAtNet-0-rw, were chosen as the backbones. After the fully-connected layer, a final layer of 14 sigmoid activation units was added to output each disease’s probability and prediction. To achieve better adaptive learning, a novel loss (Lours) was designed, which coalesced reweighting and contribution reduction of head samples. For comparison, a pretrained ResNet50 network with weighted binary cross-entropy loss (LWBCE) was used as a baseline, which showed the best performance in a previous study. The overall and individual areas under the receiver operating curve (AUROC) for each disease label were evaluated and compared among different models. Group-score-weighted class activation mapping (Group-CAM) is applied for visual interpretations. As a result, the pretrained CoAtNet-0-rw+ Lours showed the best overall AUROC of 0.842, higher than the baseline (AUROC: 0.811). Group-CAM presented that the model could pay the proper attention to lesions for most disease labels (e.g., atelectasis, edema, effusion, etc.) but wrong attention for the other labels, such as pneumothorax; meanwhile, mislabeling of the dataset was found. In conclusion, this study achieved an improved performance of multi-disease AI diagnosis. However, the finite sample size of disease cases and sorts of inaccurate labeling probably limited the diagnostic capability of the model. 
+
+
+
+
 
 ## 环境
  - cuda 11.3
